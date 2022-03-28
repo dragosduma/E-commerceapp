@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: dragos-service
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/bookstoredatabase
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialize: false
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    database-platform: mysql
+    database: mysql
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
+  mail:
+      default-encoding: UTF-8
+      host: smtp.gmail.com
+      username: dragos.duma@gmail.com
+      password: nyndatykviilgdhb
+      port: 587
+      properties:
+        mail:
+          smtp:
+            auth: true
+            starttls:
+              enable: true
+      protocol: smtp
+      test-connection: false
+      support: dragos.duma@gmail.com
